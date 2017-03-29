@@ -12,6 +12,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Schema = _mongoose2.default.Schema;
 
+_mongoose2.default.Promise = global.Promise;
+
 var MapSchema = new Schema({
     latitude: {
         type: String,

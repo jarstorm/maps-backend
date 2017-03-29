@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
+mongoose.Promise = global.Promise;
+
 const MapSchema = new Schema({
     latitude: {
         type: String,

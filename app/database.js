@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import Constants from './config/constants';
 
 // Use native promises
-mongoose.Promise = require('bluebird');
+mongoose.Promise = global.Promise;
 
 // Connect to our mongo database;
 mongoose.connect(Constants.mongo.uri);
