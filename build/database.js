@@ -11,10 +11,10 @@ var _constants2 = _interopRequireDefault(_constants);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Use native promises
-_mongoose2.default.Promise = global.Promise;
+_mongoose2.default.Promise = Promise;
 
 // Connect to our mongo database;
 _mongoose2.default.connect(_constants2.default.mongo.uri);
 _mongoose2.default.connection.on('error', function (err) {
-  throw err;
+    throw err;
 });
