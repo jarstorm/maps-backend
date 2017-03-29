@@ -1,1 +1,1 @@
-web: npm run start-production
+web: npm run clean && npm run build && npm run start-production
