@@ -11,7 +11,7 @@ var _constants2 = _interopRequireDefault(_constants);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Use native promises
-_mongoose2.default.Promise = global.Promise;
+_mongoose2.default.Promise = require('bluebird');
 
 // Connect to our mongo database;
 _mongoose2.default.connect(_constants2.default.mongo.uri);
