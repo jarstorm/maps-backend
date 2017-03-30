@@ -33,8 +33,10 @@ class MapController extends BaseController {
     search = async(req, res, next) => {
         try {
             const map =
-                await Map.find({})
-                .populate({ path: '_user', select: '-posts -role' });
+                /*
+                                await Map.find({})
+                                .populate({ path: '_user', select: '-posts -role' });*/
+                [{ "a": "b" }];
 
             res.json(map);
         } catch (err) {
