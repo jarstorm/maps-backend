@@ -15,7 +15,7 @@
         "validate": "npm run test && npm outdated --depth 0"
     },
     "engines": {
-        "node": ">= 6",
+        "node": "6.9.4",
         "npm": ">= 3"
     },
     "repository": {
