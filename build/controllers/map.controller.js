@@ -32,10 +32,6 @@ var _base = require('./base.controller');
 
 var _base2 = _interopRequireDefault(_base);
 
-var _post = require('../models/post');
-
-var _post2 = _interopRequireDefault(_post);
-
 var _map = require('../models/map');
 
 var _map2 = _interopRequireDefault(_map);
@@ -59,7 +55,7 @@ var MapController = function (_BaseController) {
 
         return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = MapController.__proto__ || Object.getPrototypeOf(MapController)).call.apply(_ref, [this].concat(args))), _this), _this.whitelist = ['latitude', 'longitude'], _this._populate = function () {
             var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(req, res, next) {
-                var id, post, err;
+                var id, map, err;
                 return _regenerator2.default.wrap(function _callee$(_context) {
                     while (1) {
                         switch (_context.prev = _context.next) {
@@ -67,12 +63,12 @@ var MapController = function (_BaseController) {
                                 id = req.params.id;
                                 _context.prev = 1;
                                 _context.next = 4;
-                                return _post2.default.findById(id);
+                                return _map2.default.findById(id);
 
                             case 4:
-                                post = _context.sent;
+                                map = _context.sent;
 
-                                if (post) {
+                                if (map) {
                                     _context.next = 9;
                                     break;
                                 }
@@ -84,7 +80,7 @@ var MapController = function (_BaseController) {
 
                             case 9:
 
-                                req.post = post;
+                                req.map = map;
                                 next();
                                 _context.next = 17;
                                 break;
@@ -144,7 +140,7 @@ var MapController = function (_BaseController) {
                 return _ref3.apply(this, arguments);
             };
         }(), _this.fetch = function (req, res) {
-            res.json(req.post);
+            res.json(req.map);
         }, _this.create = function () {
             var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(req, res, next) {
                 var params, map;
@@ -192,14 +188,14 @@ var MapController = function (_BaseController) {
                     while (1) {
                         switch (_context4.prev = _context4.next) {
                             case 0:
-                                if (!(req.post._user.toString() === req.currentUser._id.toString())) {
+                                if (!(req.map._user.toString() === req.currentUser._id.toString())) {
                                     _context4.next = 12;
                                     break;
                                 }
 
                                 _context4.prev = 1;
                                 _context4.next = 4;
-                                return req.post.remove();
+                                return req.map.remove();
 
                             case 4:
                                 res.sendStatus(204);
@@ -233,11 +229,11 @@ var MapController = function (_BaseController) {
         }(), _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
     }
 
-    // Middleware to populate post based on url param
+    // Middleware to populate map based on url param
 
 
     /**
-     * req.post is populated by middleware in routes.js
+     * req.map is populated by middleware in routes.js
      */
 
     /**

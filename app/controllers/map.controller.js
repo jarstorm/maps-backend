@@ -1,5 +1,4 @@
 import BaseController from './base.controller';
-import Post from '../models/post';
 import Map from '../models/map';
 
 class MapController extends BaseController {
@@ -9,20 +8,20 @@ class MapController extends BaseController {
         'longitude'
     ];
 
-    // Middleware to populate post based on url param
+    // Middleware to populate map based on url param
     _populate = async(req, res, next) => {
         const { id } = req.params;
 
         try {
-            const post = await Post.findById(id);
+            const map = await Map.findById(id);
 
-            if (!post) {
+            if (!map) {
                 const err = new Error('Post not found.');
                 err.status = 404;
                 return next(err);
             }
 
-            req.post = post;
+            req.map = map;
             next();
         } catch (err) {
             err.status = err.name === 'CastError' ? 404 : 500;
@@ -43,11 +42,11 @@ class MapController extends BaseController {
     }
 
     /**
-     * req.post is populated by middleware in routes.js
+     * req.map is populated by middleware in routes.js
      */
 
     fetch = (req, res) => {
-        res.json(req.post);
+        res.json(req.map);
     }
 
     /**
@@ -71,13 +70,13 @@ class MapController extends BaseController {
 
     delete = async(req, res, next) => {
         /**
-         * Ensure the user attempting to delete the post owns the post
+         * Ensure the user attempting to delete the map owns the map
          *
          * ~~ toString() converts objectIds to normal strings
          */
-        if (req.post._user.toString() === req.currentUser._id.toString()) {
+        if (req.map._user.toString() === req.currentUser._id.toString()) {
             try {
-                await req.post.remove();
+                await req.map.remove();
                 res.sendStatus(204);
             } catch (err) {
                 next(err);
