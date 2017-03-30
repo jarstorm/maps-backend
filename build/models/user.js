@@ -16,9 +16,9 @@ var _jsonwebtoken = require('jsonwebtoken');
 
 var _jsonwebtoken2 = _interopRequireDefault(_jsonwebtoken);
 
-var _post = require('./post');
+var _map = require('./map');
 
-var _post2 = _interopRequireDefault(_post);
+var _map2 = _interopRequireDefault(_map);
 
 var _constants = require('../config/constants');
 
@@ -121,8 +121,8 @@ UserSchema.pre('save', function (done) {
  * User Methods
  */
 UserSchema.methods = {
-    getPosts: function getPosts() {
-        return _post2.default.find({ _user: this._id });
+    getMap: function getMap() {
+        return _map2.default.find({ _user: this._id });
     },
 
 

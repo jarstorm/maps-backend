@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import Post from './post';
+import Map from './map';
 import Constants from '../config/constants';
 
 mongoose.Promise = global.Promise;
@@ -106,8 +106,8 @@ UserSchema
  * User Methods
  */
 UserSchema.methods = {
-    getPosts() {
-        return Post.find({ _user: this._id });
+    getMap() {
+        return Map.find({ _user: this._id });
     },
 
     /**
