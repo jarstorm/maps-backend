@@ -149,7 +149,9 @@ var MapController = function (_BaseController) {
                         switch (_context3.prev = _context3.next) {
                             case 0:
                                 params = _this.filterParams(req.body, _this.whitelist);
-                                map = new _map2.default((0, _extends3.default)({}, params));
+                                map = new _map2.default((0, _extends3.default)({}, params, {
+                                    _user: req.currentUser._id
+                                }));
 
                                 console.log(map);
                                 _context3.prev = 3;
@@ -239,6 +241,7 @@ var MapController = function (_BaseController) {
     /**
      * req.user is populated by middleware in routes.js
      */
+
 
     return MapController;
 }(_base2.default);

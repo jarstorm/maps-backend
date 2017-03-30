@@ -28,8 +28,8 @@ routes.get('/users/:username', UsersController._populate, UsersController.fetch)
 routes.get('/admin', accessControl('admin'), MetaController.index);
 
 // Map
-routes.get('/map', MapController.search);
-routes.post('/map', MapController.create);
+routes.get('/map', authenticate, MapController.search);
+routes.post('/map', authenticate, MapController.create);
 
 routes.use(errorHandler);
 

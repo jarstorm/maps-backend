@@ -52,13 +52,12 @@ class MapController extends BaseController {
     /**
      * req.user is populated by middleware in routes.js
      */
-
     create = async(req, res, next) => {
         const params = this.filterParams(req.body, this.whitelist);
 
         const map = new Map({
-            ...params //,
-            //_user: req.currentUser._id,
+            ...params,
+            _user: req.currentUser._id,
         });
         console.log(map);
         try {
