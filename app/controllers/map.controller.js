@@ -69,7 +69,6 @@ class MapController extends BaseController {
         const map = new Map({
             ...params,
             //_user: req.currentUser._id,
-            _user: new mongoose.Types.ObjectId
         });
         console.log(map);
         try {

@@ -161,10 +161,7 @@ var MapController = function (_BaseController) {
                         switch (_context3.prev = _context3.next) {
                             case 0:
                                 params = _this.filterParams(req.body, _this.whitelist);
-                                map = new _map2.default((0, _extends3.default)({}, params, {
-                                    //_user: req.currentUser._id,
-                                    _user: new _mongoose2.default.Types.ObjectId()
-                                }));
+                                map = new _map2.default((0, _extends3.default)({}, params));
 
                                 console.log(map);
                                 _context3.prev = 3;
