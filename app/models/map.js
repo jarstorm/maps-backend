@@ -12,7 +12,7 @@ const MapSchema = new Schema({
        type: [Number],
        index: '2d',
        required: true
-     }
+     },
     // media: { type: Schema.Types.ObjectId, ref: 'Media' },
     // likes : [{ type: Schema.Types.ObjectId, ref: 'Like' }],
     // comments : [{ type: Schema.Types.ObjectId, ref: 'Comment' }],

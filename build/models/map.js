@@ -15,12 +15,13 @@ var Schema = _mongoose2.default.Schema;
 _mongoose2.default.Promise = global.Promise;
 
 var MapSchema = new Schema({
-    latitude: {
+    name: {
         type: String,
         required: true
     },
-    longitude: {
-        type: String,
+    geo: {
+        type: [Number],
+        index: '2d',
         required: true
     },
     // media: { type: Schema.Types.ObjectId, ref: 'Media' },
