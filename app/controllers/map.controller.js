@@ -4,8 +4,8 @@ import Map from '../models/map';
 class MapController extends BaseController {
 
     whitelist = [
-        'latitude',
-        'longitude'
+        'name',
+        'geo'
     ];
 
     // Middleware to populate map based on url param

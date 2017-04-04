@@ -53,7 +53,7 @@ var MapController = function (_BaseController) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = MapController.__proto__ || Object.getPrototypeOf(MapController)).call.apply(_ref, [this].concat(args))), _this), _this.whitelist = ['latitude', 'longitude'], _this._populate = function () {
+        return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = MapController.__proto__ || Object.getPrototypeOf(MapController)).call.apply(_ref, [this].concat(args))), _this), _this.whitelist = ['name', 'geo'], _this._populate = function () {
             var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(req, res, next) {
                 var id, map, err;
                 return _regenerator2.default.wrap(function _callee$(_context) {
