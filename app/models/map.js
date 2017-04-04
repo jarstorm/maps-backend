@@ -4,14 +4,15 @@ const Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
 const MapSchema = new Schema({
-    latitude: {
-        type: String,
-        required: true,
-    },
-    longitude: {
-        type: String,
-        required: true,
-    },
+  name: {
+      type: String,
+      required: true
+  },
+     geo: {
+       type: [Number],
+       index: '2d',
+       required: true
+     }
     // media: { type: Schema.Types.ObjectId, ref: 'Media' },
     // likes : [{ type: Schema.Types.ObjectId, ref: 'Like' }],
     // comments : [{ type: Schema.Types.ObjectId, ref: 'Comment' }],

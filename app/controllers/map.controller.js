@@ -30,9 +30,19 @@ class MapController extends BaseController {
     }
 
     search = async(req, res, next) => {
+      const { latitude, longitude } = req.params;
+      var distance = 1000 / 6371;
         try {
             const map =
-                await Map.find({})
+                await Map.find({
+                  'geo': {
+                      $near: [
+                        latitude,
+                        longitude
+                      ],
+                      $maxDistance: distance
+                      }
+                  })
                 .populate({ path: '_user', select: '-posts -role' });
 
             res.json(map);
