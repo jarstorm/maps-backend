@@ -29,7 +29,7 @@ routes.get('/admin', accessControl('admin'), MetaController.index);
 
 // Map
 routes.get('/map', authenticate, MapController.search);
-routes.post('/map', authenticate, MapController.create);
+routes.post('/map', MapController.create);
 
 routes.use(errorHandler);
 
