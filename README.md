@@ -57,3 +57,5 @@ Now we can access one of these variables with something like `process.env.MONGO_
 ## License
 MIT
 # maps-backend
+
+curl -H "Content-Type: application/json" -X POST -d '{"name": "test", "geo": [37.78825, -122.4324] }' https://jarstorm-maps.herokuapp.com/map

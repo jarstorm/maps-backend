@@ -158,7 +158,8 @@ var MapController = function (_BaseController) {
                             case 0:
                                 params = _this.filterParams(req.body, _this.whitelist);
                                 map = new _map2.default((0, _extends3.default)({}, params, {
-                                    _user: req.currentUser._id
+                                    //_user: req.currentUser._id,
+                                    _user: 'popo'
                                 }));
 
                                 console.log(map);

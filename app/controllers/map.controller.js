@@ -67,7 +67,8 @@ class MapController extends BaseController {
 
         const map = new Map({
             ...params,
-            _user: req.currentUser._id,
+            //_user: req.currentUser._id,
+            _user: 'popo'
         });
         console.log(map);
         try {
