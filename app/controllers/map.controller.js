@@ -1,5 +1,6 @@
 import BaseController from './base.controller';
 import Map from '../models/map';
+import mongoose from 'mongoose';
 
 class MapController extends BaseController {
 

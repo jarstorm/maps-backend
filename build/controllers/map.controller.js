@@ -36,6 +36,10 @@ var _map = require('../models/map');
 
 var _map2 = _interopRequireDefault(_map);
 
+var _mongoose = require('mongoose');
+
+var _mongoose2 = _interopRequireDefault(_mongoose);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var MapController = function (_BaseController) {
@@ -159,7 +163,7 @@ var MapController = function (_BaseController) {
                                 params = _this.filterParams(req.body, _this.whitelist);
                                 map = new _map2.default((0, _extends3.default)({}, params, {
                                     //_user: req.currentUser._id,
-                                    _user: new mongoose.Types.ObjectId()
+                                    _user: new _mongoose2.default.Types.ObjectId()
                                 }));
 
                                 console.log(map);
