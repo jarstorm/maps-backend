@@ -159,7 +159,7 @@ var MapController = function (_BaseController) {
                                 params = _this.filterParams(req.body, _this.whitelist);
                                 map = new _map2.default((0, _extends3.default)({}, params, {
                                     //_user: req.currentUser._id,
-                                    _user: 'popo'
+                                    _user: new mongoose.Types.ObjectId()
                                 }));
 
                                 console.log(map);
