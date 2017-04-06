@@ -109,16 +109,18 @@ var MapController = function (_BaseController) {
             };
         }(), _this.search = function () {
             var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(req, res, next) {
-                var _req$params, latitude, longitude, distance, map;
+                var _req$query, latitude, longitude, distance, map;
 
                 return _regenerator2.default.wrap(function _callee2$(_context2) {
                     while (1) {
                         switch (_context2.prev = _context2.next) {
                             case 0:
-                                _req$params = req.params, latitude = _req$params.latitude, longitude = _req$params.longitude;
+                                _req$query = req.query, latitude = _req$query.latitude, longitude = _req$query.longitude;
+
+                                console.log(req);
                                 distance = 1000 / 6371;
-                                _context2.prev = 2;
-                                _context2.next = 5;
+                                _context2.prev = 3;
+                                _context2.next = 6;
                                 return _map2.default.find({
                                     'geo': {
                                         $near: [latitude, longitude],
@@ -126,25 +128,25 @@ var MapController = function (_BaseController) {
                                     }
                                 }).populate({ path: '_user', select: '-posts -role' });
 
-                            case 5:
+                            case 6:
                                 map = _context2.sent;
 
                                 res.json(map);
-                                _context2.next = 12;
+                                _context2.next = 13;
                                 break;
 
-                            case 9:
-                                _context2.prev = 9;
-                                _context2.t0 = _context2['catch'](2);
+                            case 10:
+                                _context2.prev = 10;
+                                _context2.t0 = _context2['catch'](3);
 
                                 next(_context2.t0);
 
-                            case 12:
+                            case 13:
                             case 'end':
                                 return _context2.stop();
                         }
                     }
-                }, _callee2, _this2, [[2, 9]]);
+                }, _callee2, _this2, [[3, 10]]);
             }));
 
             return function (_x4, _x5, _x6) {
