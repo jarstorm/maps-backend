@@ -117,7 +117,7 @@ var MapController = function (_BaseController) {
                             case 0:
                                 _req$body = req.body, latitude = _req$body.latitude, longitude = _req$body.longitude;
 
-                                console.log("datps que llegan", latitude, longitude);
+                                console.log("datps que llegan", req, req.body, req.body.data, latitude, longitude);
                                 distance = 1000 / 6371;
                                 _context2.prev = 3;
                                 _context2.next = 6;
