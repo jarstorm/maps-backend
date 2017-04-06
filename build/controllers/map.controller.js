@@ -109,13 +109,13 @@ var MapController = function (_BaseController) {
             };
         }(), _this.search = function () {
             var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(req, res, next) {
-                var _req$params, latitude, longitude, distance, map;
+                var _req$body, latitude, longitude, distance, map;
 
                 return _regenerator2.default.wrap(function _callee2$(_context2) {
                     while (1) {
                         switch (_context2.prev = _context2.next) {
                             case 0:
-                                _req$params = req.params, latitude = _req$params.latitude, longitude = _req$params.longitude;
+                                _req$body = req.body, latitude = _req$body.latitude, longitude = _req$body.longitude;
                                 distance = 1000 / 6371;
                                 _context2.prev = 2;
                                 _context2.next = 5;
@@ -128,7 +128,6 @@ var MapController = function (_BaseController) {
 
                             case 5:
                                 map = _context2.sent;
-
 
                                 res.json(map);
                                 _context2.next = 12;
@@ -161,7 +160,9 @@ var MapController = function (_BaseController) {
                         switch (_context3.prev = _context3.next) {
                             case 0:
                                 params = _this.filterParams(req.body, _this.whitelist);
-                                map = new _map2.default((0, _extends3.default)({}, params));
+                                map = new _map2.default((0, _extends3.default)({}, params, {
+                                    _user: req.currentUser._id
+                                }));
 
                                 console.log(map);
                                 _context3.prev = 3;

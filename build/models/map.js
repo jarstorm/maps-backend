@@ -23,12 +23,12 @@ var MapSchema = new Schema({
         type: [Number],
         index: '2d',
         required: true
-    }
+    },
     // media: { type: Schema.Types.ObjectId, ref: 'Media' },
     // likes : [{ type: Schema.Types.ObjectId, ref: 'Like' }],
     // comments : [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     // flags : [{ type: Schema.Types.ObjectId, ref: 'Flag' }]
-    // _user: { type: Schema.Types.ObjectId, ref: 'User' }
+    _user: { type: Schema.Types.ObjectId, ref: 'User' }
 }, {
     timestamps: true
 });

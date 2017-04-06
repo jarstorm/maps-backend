@@ -31,7 +31,7 @@ class MapController extends BaseController {
     }
 
     search = async(req, res, next) => {
-      const { latitude, longitude } = req.params;
+      const { latitude, longitude } = req.body;
       var distance = 1000 / 6371;
         try {
             const map =
@@ -45,7 +45,6 @@ class MapController extends BaseController {
                       }
                   })
                 .populate({ path: '_user', select: '-posts -role' });
-
             res.json(map);
         } catch (err) {
             next(err);
@@ -68,7 +67,7 @@ class MapController extends BaseController {
 
         const map = new Map({
             ...params,
-            //_user: req.currentUser._id,
+            _user: req.currentUser._id,
         });
         console.log(map);
         try {
