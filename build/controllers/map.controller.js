@@ -116,9 +116,11 @@ var MapController = function (_BaseController) {
                         switch (_context2.prev = _context2.next) {
                             case 0:
                                 _req$body = req.body, latitude = _req$body.latitude, longitude = _req$body.longitude;
+
+                                console.log("datps que llegan", latitude, longitude);
                                 distance = 1000 / 6371;
-                                _context2.prev = 2;
-                                _context2.next = 5;
+                                _context2.prev = 3;
+                                _context2.next = 6;
                                 return _map2.default.find({
                                     'geo': {
                                         $near: [latitude, longitude],
@@ -126,25 +128,25 @@ var MapController = function (_BaseController) {
                                     }
                                 }).populate({ path: '_user', select: '-posts -role' });
 
-                            case 5:
+                            case 6:
                                 map = _context2.sent;
 
                                 res.json(map);
-                                _context2.next = 12;
+                                _context2.next = 13;
                                 break;
 
-                            case 9:
-                                _context2.prev = 9;
-                                _context2.t0 = _context2['catch'](2);
+                            case 10:
+                                _context2.prev = 10;
+                                _context2.t0 = _context2['catch'](3);
 
                                 next(_context2.t0);
 
-                            case 12:
+                            case 13:
                             case 'end':
                                 return _context2.stop();
                         }
                     }
-                }, _callee2, _this2, [[2, 9]]);
+                }, _callee2, _this2, [[3, 10]]);
             }));
 
             return function (_x4, _x5, _x6) {
