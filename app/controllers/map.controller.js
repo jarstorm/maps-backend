@@ -31,7 +31,8 @@ class MapController extends BaseController {
     }
 
     search = async(req, res, next) => {
-      const { latitude, longitude } = req.params;
+      const { latitude, longitude } = req.query;
+      console.log(req);
       var distance = 1000 / 6371;
         try {
             const map =
