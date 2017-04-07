@@ -6,6 +6,7 @@ class MapController extends BaseController {
 
     whitelist = [
         'name',
+        'description',
         'geo'
     ];
 
@@ -32,8 +33,7 @@ class MapController extends BaseController {
 
     search = async(req, res, next) => {
       const { latitude, longitude } = req.query;
-      console.log(req);
-      var distance = 1000 / 6371;
+      var distance = 10000 / 6371;
         try {
             const map =
                 await Map.find({
@@ -65,12 +65,10 @@ class MapController extends BaseController {
      */
     create = async(req, res, next) => {
         const params = this.filterParams(req.body, this.whitelist);
-
         const map = new Map({
             ...params,
             _user: req.currentUser._id,
         });
-        console.log(map);
         try {
             res.status(201).json(await map.save());
         } catch (err) {

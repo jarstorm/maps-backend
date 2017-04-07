@@ -8,6 +8,10 @@ const MapSchema = new Schema({
       type: String,
       required: true
   },
+  description: {
+      type: String,
+      required: true
+  },
      geo: {
        type: [Number],
        index: '2d',
