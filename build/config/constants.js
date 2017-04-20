@@ -58,7 +58,7 @@ var defaultConfig = {
 var environmentConfigs = {
     development: {
         mongo: {
-            uri: process.env.MONGO_URI || 'mongodb://jarstorm:jarstorm@ds119220.mlab.com:19220/map'
+            uri: process.env.MONGO_URI || 'mongodb://localhost/development'
         },
         security: {
             saltRounds: 4

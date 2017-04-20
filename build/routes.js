@@ -56,7 +56,7 @@ routes.get('/admin', (0, _accessControl2.default)('admin'), _meta2.default.index
 
 // Map
 routes.get('/map', _authenticate2.default, _map2.default.search);
-routes.post('/map', _map2.default.create);
+routes.post('/map', _authenticate2.default, _map2.default.create);
 
 routes.use(_errorHandler2.default);
 
